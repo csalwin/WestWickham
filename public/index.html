@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>West Wickham Underwater Hockey</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen"/>
+</head>
+<body>
+<div id="page">
+
+<header class="row">
+    <nav>
+        <div id="logo">
+            <img src="../app/images/home/West%20Wickham_mens%20suit%20V2.jpg" alt="West Wickham Logo" title="West Wickham Logo"/>
+            <div id="selector">
+                <ul>
+                    <li><a>Elite</a></li>
+                    <p>/</p>
+                    <li><a>Junior</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="links">
+            <ul>
+                <li><a>About</a></li>
+                    <li><a>Committee</a></li>
+                    <li><a>In the Press</a></li>
+                <li><a>Squad</a></li>
+                    <li><a>Members</a></li>
+                    <li><a>Awards</a></li>
+                <li><a>Events</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+</header>
+
+<section class="row"> <!--Start of Information Area-->
+    <div id="sidebar">
+        <div class="row">
+            <h3>Latest Tweets</h3>
+        </div>
+        <div class="row">
+            <h3>Calender</h3>
+        </div>
+
+    </div>
+    <div id="content">
+        <div id="slider">
+
+        </div>
+
+        <div id="intro">
+            <h2>Who we are</h2>
+            <p>Welcome to the homepage of West Wickham Underwater Hockey Club.  We currently train twice a week Monday and Thursday in the South London area,
+                with our Thursday night session being one of the biggest in London and running two seperate games.  After every session we of course then
+                head on down to the local pub.</p>
+
+
+            <p>Anyone is welcome to just come along, and all levels of experience are catered for. The first time you play with us is free but everytime
+                after that it's normally £6 per guest session. Once you become a member of the club you have the opportunity to pay over longer periods to
+                make greater savings. Juniors may attend our adult sessions for free.</p>
+        </div>
+
+        <div class="col-3">
+            <h2>Latest from Facebook</h2>
+
+            <iframe width="900px" height="700px" src="https://groups.google.com/forum/embed/?place=forum/westwickhamuwh"></iframe>
+
+            <iframe id="forum_embed"
+                    src="javascript:void(0)"
+                    scrolling="no"
+                    frameborder="1px"
+                    width="900"
+                    height="700">
+            </iframe>
+
+            <script type="text/javascript">
+                document.getElementById("forum_embed").src =
+                        "https://groups.google.com/forum/embed/?place=forum/westwickhamuwh" +
+                                "&showsearch=true&showpopout=true&parenturl=" +
+                                encodeURIComponent(window.location.href);
+            </script>
+
+
+
+        </div>
+    </div>
+
+</section><!--End Of Information Area-->
+
+<footer class="row">
+
+</footer>
+
+</div><!--End of Page ID-->
+
+
+
+</body>
+
+
+<script>
+    // No redirection!
+    var prevent_bust = 0
+    window.onbeforeunload = function() { prevent_bust++ }
+    setInterval(function() {
+        if (prevent_bust > 0) {
+            prevent_bust -= 2
+            window.top.location = 'https://groups.google.com/forum/embed/?place=forum/westwickhamuwh'
+        }
+    }, 1)
+</script>
+
+
+</html>
