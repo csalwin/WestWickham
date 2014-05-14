@@ -1,0 +1,63 @@
+@import "reset.css";
+
+body {
+    font: 16px/1 sans-serif;
+
+}
+
+h1 {
+    font-size: 32px;
+    padding: 24px 0;
+}
+
+h2 {
+    font-size: 28px;
+    padding: 18px 0;
+}
+h3 {
+    font-size: 20px;
+    padding: 14px 0;
+}
+
+p {
+    padding: 12px 0;
+    line-height: 24px;
+}
+
+ul,ol{
+    padding-left: 18px;
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+nav a {
+    text-decoration: none;
+}
+
+header {
+    margin-top: 0;
+}
+
+header,section,footer {
+    margin: 24px 0;
+}
+
+footer {
+    margin-bottom: 0;
+}
+
+
+h1,h2,h3,strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
