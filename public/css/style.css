@@ -1,10 +1,52 @@
 @import "normalise.css";
 
 body {
-    background-image: url("../images/home/bluewaterbackground.jpg");
+    background-color: #2E3E79;
+}
+header {
+    margin: 0;
 }
 
 #page {
     background-color: #FFFFFF;
-    opacity: 0.6;
+    width: 100%;
+    display: block;
+}
+
+#logo img {
+    width: 200px;
+    height: auto;
+}
+
+nav #links {
+    display: block;
+    float: right;
+    width: 560px;
+}
+
+nav #links ul li{
+    float: left;
+
+}
+
+#content {
+    width: 100%;
+    margin: 5px 5px 5px 2px;
+}
+
+.row {
+    outline: 2px solid;
+}
+
+.col-3 {
+    width: 320px;
+    padding: 3px;
+
+
+}
+
+section.fb-post {
+    display: block;
+    float: left;
+    outline: 3px solid;
 }
