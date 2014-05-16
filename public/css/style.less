@@ -1,0 +1,118 @@
+@import url("normalise.css");
+
+@padding: 5px;
+@color: #2E3E79;
+@width: 100%;
+
+body {
+  width: 100%;
+
+  #page {
+    padding: @padding;
+    header {
+
+      margin-top: 0px;
+      background-color: @color;
+      height: 360px;
+
+      h1 {
+        span{
+          display: none;
+        }
+        a{
+          background: url("../images/home/West%20Wickham_mens%20suit%20V2.jpg") no-repeat center center;
+          display: block;
+          width: 327px;
+          height: 160px;
+          margin: 0 auto;
+
+        }
+      }
+
+      nav {
+
+        width: auto;
+        height: 200px;
+
+
+          #selector {
+
+            ul{
+              margin: 0 @padding;
+
+              li{
+                position: absolute;
+                right: 10px;
+                top: 160px;
+                width: @width/3;
+                outline: 2px solid;
+
+                float: left;
+                text-align: center;
+                font-size: 16px;
+
+
+                a {
+                  color: #000;
+                  display: block;
+                  padding: 17px 0;
+                  text-decoration: none;
+
+                }
+
+
+              }
+            }
+          }
+        #links {
+          width: 100%;
+
+          ul{
+            margin: 0 @padding;
+
+            li{
+              width: @width/3;
+              outline: 2px solid;
+
+              float: left;
+              text-align: center;
+              font-size: 16px;
+
+
+              a {
+                color: #000;
+                display: block;
+                padding: 17px 0;
+                text-decoration: none;
+
+              }
+
+
+            }
+          }
+        }
+       }
+
+
+    }
+  #content {
+    #slider {
+
+    }
+    #intro {
+
+    }
+    #col-3 {
+      .fb-post {
+
+      }
+      .fb-title {
+
+      }
+    }
+  }
+    footer {
+
+    }
+  }
+}

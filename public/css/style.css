@@ -1,52 +1,64 @@
-@import "normalise.css";
-
+@import url("normalise.css");
 body {
-    background-color: #2E3E79;
+  width: 100%;
 }
-header {
-    margin: 0;
+body #page {
+  padding: 5px;
 }
-
-#page {
-    background-color: #FFFFFF;
-    width: 100%;
-    display: block;
+body #page header {
+  margin-top: 0px;
+  background-color: #2e3e79;
+  height: 360px;
 }
-
-#logo img {
-    width: 200px;
-    height: auto;
+body #page header h1 span {
+  display: none;
 }
-
-nav #links {
-    display: block;
-    float: right;
-    width: 560px;
+body #page header h1 a {
+  background: url("../images/home/West%20Wickham_mens%20suit%20V2.jpg") no-repeat center center;
+  display: block;
+  width: 327px;
+  height: 160px;
+  margin: 0 auto;
 }
-
-nav #links ul li{
-    float: left;
-
+body #page header nav {
+  width: auto;
+  height: 200px;
 }
-
-#content {
-    width: 100%;
-    margin: 5px 5px 5px 2px;
+body #page header nav #selector ul {
+  margin: 0 5px;
 }
-
-.row {
-    outline: 2px solid;
+body #page header nav #selector ul li {
+  position: absolute;
+  right: 10px;
+  top: 160px;
+  width: 33.33333333%;
+  outline: 2px solid;
+  float: left;
+  text-align: center;
+  font-size: 16px;
 }
-
-.col-3 {
-    width: 320px;
-    padding: 3px;
-
-
+body #page header nav #selector ul li a {
+  color: #000;
+  display: block;
+  padding: 17px 0;
+  text-decoration: none;
 }
-
-section.fb-post {
-    display: block;
-    float: left;
-    outline: 3px solid;
+body #page header nav #links {
+  width: 100%;
+}
+body #page header nav #links ul {
+  margin: 0 5px;
+}
+body #page header nav #links ul li {
+  width: 33.33333333%;
+  outline: 2px solid;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+}
+body #page header nav #links ul li a {
+  color: #000;
+  display: block;
+  padding: 17px 0;
+  text-decoration: none;
 }
