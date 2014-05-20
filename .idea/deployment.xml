@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="local-Westwickham">
+  <component name="PublishConfigData" serverName="local-Westwickham" uploadOnCheckin="79f5f46e-8d68-4a71-8bdb-66ce1ec04332">
     <serverData>
       <paths name="local-Westwickham">
         <serverdata>
@@ -10,6 +10,7 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="Backup" />
   </component>
 </project>
 
