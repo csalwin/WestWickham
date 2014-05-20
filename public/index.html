@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>West Wickham Underwater Hockey</title>
+    <title>West Wickham Underwater Hockey - Junior</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 </head>
-<body>
+<body onload="junior_page()">
 <div id="page">
 
 <header>
@@ -17,9 +17,9 @@
             <div id="selector">
                 <ul>
 
-                    <li><a>Elite</a></li>
+                    <li id="elite"><a>Elite</a></li>
                     <li>/</li>
-                    <li><a>Junior</a></li>
+                    <li id="junior"><a>Junior</a></li>
 
                 </ul>
             </div>
@@ -112,6 +112,18 @@
 
 
 </body>
+
+<script>
+    function junior_page();
+    if (document.title="West Wickham Underwater Hockey - Junior"){
+    document.getElementById("junior").style.display="show";
+    document.getElementById("elite").style.display="none";
+    document.getElementById("header").style.color="red";
+    }
+    else {
+
+    }
+</script>
 
 
 
