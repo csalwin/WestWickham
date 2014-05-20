@@ -3,11 +3,11 @@ body {
   width: 100%;
 }
 body #page {
-  padding: 5px;
+  padding: 0 5px;
 }
 body #page header {
   margin-top: 0px;
-  background-color: #2e3e79;
+  background-color: #29366f;
   height: 250px;
 }
 body #page header h1 span {
@@ -24,14 +24,14 @@ body #page header h1 a {
 body #page header nav {
   margin-top: 20px;
   width: auto;
-  height: 200px;
+  height: auto;
 }
 body #page header nav #selector ul {
   margin: 0 5px;
 }
 body #page header nav #selector ul li {
   position: absolute;
-  right: 10px;
+  right: 0px;
   top: 100px;
   width: 33.33333333%;
   outline: 0;
@@ -63,4 +63,31 @@ body #page header nav #links ul li a {
   display: block;
   padding: 17px 0;
   text-decoration: none;
+}
+@media (min-width: 700px) {
+  body #page {
+    width: 750px;
+    margin: 0 auto;
+  }
+  body #page header {
+    margin-top: 0px;
+    height: 120px;
+  }
+  body #page header h1 {
+    padding: 0px;
+  }
+  body #page header h1 a {
+    width: 245px;
+    height: 120px;
+    float: left;
+  }
+  body #page header nav {
+    margin-top: 0px;
+  }
+  body #page header nav #links ul {
+    margin-left: 265px;
+  }
+  body #page header nav #links ul li {
+    width: 80px;
+  }
 }

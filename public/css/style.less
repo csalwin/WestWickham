@@ -1,14 +1,14 @@
 @import url("normalise.css");
 
 @padding: 5px;
-@color: #2E3E79;
+@color: #29366f;
 @width: 100%;
 
 body {
   width: 100%;
 
   #page {
-    padding: @padding;
+    padding: 0 @padding;
     header {
 
       margin-top: 0px;
@@ -35,7 +35,7 @@ body {
       nav {
         margin-top: 20px;
         width: auto;
-        height: 200px;
+        height: auto;
 
 
           #selector {
@@ -47,7 +47,7 @@ body {
 
               li{
                 position: absolute;
-                right: 10px;
+                right: 0px;
                 top: 100px;
                 width: @width/3;
                 outline: 0;
@@ -118,6 +118,136 @@ body {
   }
     footer {
 
+
     }
   }
+}
+
+@media (min-width: 700px) {
+  body{
+
+    #page{
+      width: 750px;
+      margin: 0 auto;
+      header{
+        margin-top: 0px;
+        height: 120px;
+        h1{
+          padding: 0px;
+          span{
+          }
+          a{
+            width: 245px;
+            height: 120px;
+            float: left;
+
+          }
+
+        }
+        nav {
+          margin-top: 0px;
+
+          #selector{
+            ul{
+              li{
+                a{
+
+                }
+              }
+            }
+          }
+          #links{
+            ul{
+              margin-left: 265px;
+              li{
+                width: 80px;
+                a{
+
+                }
+              }
+            }
+          }
+
+        }
+      }
+      #content {
+        #slider {
+
+        }
+        #intro {
+
+        }
+        #col-3 {
+          .fb-post {
+
+          }
+          .fb-title {
+
+          }
+        }
+      }
+      footer {
+
+
+      }
+    }
+  }
+}
+
+@media (width: 960px) {
+body{
+  #page{
+    header{
+      h1{
+        span{
+        }
+        a{
+
+        }
+
+      }
+      nav {
+        #selector{
+          ul{
+            li{
+              a{
+
+              }
+            }
+          }
+        }
+        #links{
+          ul{
+            li{
+              a{
+
+              }
+            }
+          }
+        }
+
+      }
+    }
+    #content {
+      #slider {
+
+      }
+      #intro {
+
+      }
+      #col-3 {
+        .fb-post {
+
+        }
+        .fb-title {
+
+        }
+      }
+    }
+    footer {
+
+
+    }
+  }
+}
 }
