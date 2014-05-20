@@ -18,7 +18,7 @@
                 <ul>
 
                     <li id="elite"><a>Elite</a></li>
-                    <li>/</li>
+
                     <li id="junior"><a>Junior</a></li>
 
                 </ul>
@@ -114,14 +114,17 @@
 </body>
 
 <script>
-    function junior_page();
-    if (document.title="West Wickham Underwater Hockey - Junior"){
-    document.getElementById("junior").style.display="show";
-    document.getElementById("elite").style.display="none";
-    document.getElementById("header").style.color="red";
+    function junior_page(){
+    if (document.title=="West Wickham Underwater Hockey - Junior"){
+        document.getElementById("junior").style.display="none";
+        document.getElementById("elite").style.display="show";
+
     }
     else {
+        document.getElementById("junior").style.display="show";
+        document.getElementById("elite").style.display="none";
 
+    }
     }
 </script>
 

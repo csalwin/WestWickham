@@ -13,24 +13,27 @@ body {
 
       margin-top: 0px;
       background-color: @color;
-      height: 360px;
+      height: 250px;
 
       h1 {
+
+
         span{
           display: none;
         }
         a{
           background: url("../images/home/West%20Wickham_mens%20suit%20V2.jpg") no-repeat center center;
           display: block;
-          width: 327px;
-          height: 160px;
+          width: 160px;
+          height: 80px;
           margin: 0 auto;
+          background-size: contain;
 
         }
       }
 
       nav {
-
+        margin-top: 20px;
         width: auto;
         height: 200px;
 
@@ -38,14 +41,16 @@ body {
           #selector {
 
             ul{
+
               margin: 0 @padding;
+
 
               li{
                 position: absolute;
                 right: 10px;
-                top: 160px;
+                top: 100px;
                 width: @width/3;
-                outline: 2px solid;
+                outline: 0;
 
                 float: left;
                 text-align: center;
