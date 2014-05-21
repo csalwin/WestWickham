@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>West Wickham Underwater Hockey</title>
+    <script src="js/min/modernizr.min.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 </head>
 <body onload="junior_page()">
@@ -14,26 +16,27 @@
     <nav>
 
 
-            <div id="selector">
-                <ul>
-
-                    <li id="elite"><a>Elite</a></li>
-
-                    <li id="junior"><a>Junior</a></li>
-
-                </ul>
-            </div>
-
         <div id="links">
             <ul>
+                <li id="home_btn"><a href="index.html">Home</a></li>
                 <li><a>About</a></li>
-                <li><a>Events</a></li>
+                <li><a href="events.html">Events</a></li>
                 <li><a>News</a></li>
                 <li><a>Media</a></li>
                 <li><a>Shop</a></li>
-                <li><a>Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
 
+        </div>
+
+        <div id="selector">
+            <ul>
+
+                <li id="elite"><a>Elite</a></li>
+
+                <li id="junior"><a>Junior</a></li>
+
+            </ul>
         </div>
 
     </nav>
@@ -41,8 +44,9 @@
 
 
     <div id="content">
-        <div id="slider">
-
+        <div class="cycle-slideshow">
+            <img src="images/home/slider/image1-slider.jpg" alt="Scott and Matt on the Puck">
+            <img src="images/home/slider/image2-slider" alt="GB girls TEAM Airplane">
 
         </div>
 
@@ -112,6 +116,8 @@
 
 
 </body>
+<script src="js/min/jquery.min.js"></script>
+<script src="js/cycle2/cycle2.js"></script>
 
 <script>
 

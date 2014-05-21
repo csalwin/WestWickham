@@ -33,49 +33,24 @@ body {
       }
 
       nav {
+
         margin-top: 20px;
         width: auto;
         height: auto;
 
 
-          #selector {
 
-            ul{
-
-              margin: 0 @padding;
-
-
-              li{
-                position: absolute;
-                right: 0px;
-                top: 100px;
-                width: @width/3;
-                outline: 0;
-
-                float: left;
-                text-align: center;
-                font-size: 16px;
-
-
-                a {
-                  color: #000;
-                  display: block;
-                  padding: 17px 0;
-                  text-decoration: none;
-
-                }
-
-
-              }
-            }
-          }
         #links {
           width: 100%;
 
           ul{
             margin: 0 @padding;
+            #home_btn {
+              display: none;
+            }
 
             li{
+
               width: @width/3;
               outline: 2px solid;
 
@@ -85,7 +60,39 @@ body {
 
 
               a {
-                color: #000;
+                color: #FFFFFF;
+                display: block;
+                padding: 17px 0;
+                text-decoration: none;
+
+              }
+
+
+            }
+          }
+        }
+        #selector {
+
+          ul{
+
+            margin: 0 @padding;
+
+
+            li{
+
+              position: absolute;
+              right: 0px;
+              top: 100px;
+              width: @width/3;
+              outline: 0;
+
+              float: left;
+              text-align: center;
+              font-size: 16px;
+
+
+              a {
+                color: #FFFFFF;
                 display: block;
                 padding: 17px 0;
                 text-decoration: none;
@@ -101,7 +108,8 @@ body {
 
     }
   #content {
-    #slider {
+    .cycle-slideshow {
+      display: none;
 
     }
     #intro {
@@ -115,6 +123,61 @@ body {
 
       }
     }
+    table {
+      margin: 0 auto;
+    td {
+      outline: 1px solid #000;
+      padding: @padding*2;
+    }
+    }
+
+    /*Contact Form */
+
+    #contact_form {
+      display: block;
+      width: 100%;
+      max-width: 750px;
+      margin: 0 auto;
+      form {
+        width: 100%;
+
+
+
+        input, textarea {
+          padding: 10px;
+          border: 1px solid #E5E5E5;
+          width: 200px;
+          color: #999999;
+
+        }
+
+        textarea {
+          width: 100%;
+          height: 150px;
+          max-width: 400px;
+          line-height: 18px;
+        }
+
+
+
+
+
+        .form label {
+          margin-left: 10px;
+          color: #999999;
+        }
+
+    /*submit button*/
+
+        .submit input {
+          width: 100px;
+          height: 40px;
+          background-color: @color;
+          color: #FFF;
+
+        }
+      }
+    }
   }
     footer {
 
@@ -122,12 +185,10 @@ body {
     }
   }
 }
-
-@media (min-width: 700px) {
+@media(min-width: 750px){
   body{
-
     #page{
-      width: 750px;
+      width:750px;
       margin: 0 auto;
       header{
         margin-top: 0px;
@@ -145,22 +206,28 @@ body {
 
         }
         nav {
-          margin-top: 0px;
+          margin-top: 0;
 
-          #selector{
+
+          #links{
             ul{
+
+              margin-left: 265px;
               li{
+                margin-top: 30px;
+                width: 80px;
                 a{
 
                 }
               }
             }
           }
-          #links{
+          #selector{
             ul{
-              margin-left: 265px;
               li{
-                width: 80px;
+                position: relative;
+                left: 345px;
+                top: -90px;
                 a{
 
                 }
@@ -171,14 +238,24 @@ body {
         }
       }
       #content {
-        #slider {
+        .cycle-slideshow {
+          display: inherit;
+          img{
+          width: 750px;
+          height: auto;
+          }
 
         }
         #intro {
 
         }
-        #col-3 {
+        .col-3 {
+
           .fb-post {
+            display: block;
+            width: 720px/3;
+            float: left;
+            padding: @padding;
 
           }
           .fb-title {
@@ -194,10 +271,12 @@ body {
   }
 }
 
-@media (width: 960px) {
+@media (min-width: 960px) {
 body{
   #page{
+    width: 960px;
     header{
+      margin-top: 0px;
       h1{
         span{
         }
@@ -207,36 +286,54 @@ body{
 
       }
       nav {
+        position: relative;
+        right: -38px;
+        #links{
+          ul{
+
+            margin-left: 395px;
+            #home_btn {
+              display: inherit;
+            }
+            li{
+              width: 75px;
+              a{
+
+              }
+            }
+          }
+        }
+
         #selector{
           ul{
             li{
+              position: relative;
+              left: 480px;
+              top: -90px;
               a{
 
               }
             }
           }
         }
-        #links{
-          ul{
-            li{
-              a{
 
-              }
-            }
-          }
-        }
 
       }
     }
     #content {
-      #slider {
+      .cycle-slideshow {
+        img{
+        width: 960px;
+        height: auto;
+        }
 
       }
       #intro {
 
       }
-      #col-3 {
+      .col-3 {
         .fb-post {
+          width: 930px/3;
 
         }
         .fb-title {
