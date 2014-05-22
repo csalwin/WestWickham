@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>West Wickham Underwater Hockey</title>
+    <script src="js/min/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+</head>
+<body onload="junior_page()">
+<div id="page">
+
+    <header>
+
+        <h1><a href="index.html"><span>West Wickham Underwater Hockey Club</span></a></h1><!-- Logo image -->
+        <nav>
+
+
+            <div id="links">
+                <ul>
+                    <li id="home_btn"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+
+            <div id="selector">
+                <ul>
+
+                    <li id="elite"><a>Elite</a></li>
+
+                    <li id="junior"><a>Junior</a></li>
+
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <div id="content">
+        <div class="col-1">
+
+            <section class="fb-post">
+                <div class="fb-title">
+                    <h3>First</h3>
+                </div>
+                <div class="fb-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
+                        sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
+                        nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
+                </div>
+            </section>
+
+        </div>
+
+
+        <div class="col-2">
+            <section class="fb-post">
+                <div class="fb-title">
+                    <h3>Second Title</h3>
+                </div>
+                <div class="fb-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
+                        sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
+                        nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
+                </div>
+            </section>
+            <section class="fb-post">
+                <div class="fb-title">
+                    <h3>Third Title</h3>
+                </div>
+                <div class="fb-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
+                        sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
+                        nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
+                </div>
+            </section>
+
+
+        </div>
+
+
+
+        <div class="col-3">
+
+
+            <section class="fb-post">
+                <div class="fb-title">
+                    <h3>Fourth title</h3>
+                </div>
+                <div class="fb-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
+                        sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
+                        nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
+                </div>
+            </section>
+            <section class="fb-post">
+                <div class="fb-title">
+                    <h3>Fifth title</h3>
+                </div>
+                <div class="fb-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
+                        sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
+                        nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
+                </div>
+            </section>
+            <section class="fb-post">
+                <div class="fb-title">
+                    <h3>Sixth title</h3>
+                </div>
+                <div class="fb-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
+                        sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
+                        nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
+                </div>
+            </section>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <footer>
+
+    </footer>
+
+</div><!--End of Page ID-->
+
+
+
+</body>
+<script src="js/min/jquery.min.js"></script>
+<script src="js/cycle2/cycle2.js"></script>
+
+<script>
+
+    function junior_page(){
+        if (document.title=="West Wickham Underwater Hockey - Junior"){
+            document.getElementById("junior").style.display="none";
+            document.getElementById("elite").style.display="show";
+
+        }
+        else {
+            document.getElementById("junior").style.display="show";
+            document.getElementById("elite").style.display="none";
+
+        }
+    }
+
+
+
+
+</script>
+
+
+
+</html>

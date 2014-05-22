@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>West Wickham Underwater Hockey</title>
+    <script src="js/min/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <style>
+        body #page header {
+            background-color: #FF3333;
+        }
+
+    </style>
+</head>
+<body onload="junior_page()">
+<div id="page">
+
+    <header>
+
+        <h1><a href="index.html"><span>West Wickham Underwater Hockey Club - Admin Pages</span></a></h1><!-- Logo image -->
+        <nav>
+
+
+            <div id="links">
+                <ul>
+                    <li id="home_btn"><a href="admin-home.html" class="active">Home</a></li>
+                    <li><a href="admin-about.html">About</a></li>
+                    <li><a href="admin-events.html">Events</a></li>
+                    <li><a>News</a></li>
+                    <li><a>Media</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+
+            </div>
+
+            <div id="selector">
+                <ul>
+
+                    <li id="elite"><a>Elite</a></li>
+
+                    <li id="junior"><a>Junior</a></li>
+
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <div id="content">
+
+        <h2 style="color: red">This Is the Admin Page.</h2>
+        <p>From Here you can change certain elements of the content. Using the Navigation above
+            you will be able to select each page and change the content on that page.</p>
+
+
+        <form action="upload_file.php" method="post"
+              enctype="multipart/form-data">
+            <h3>Slider Images</h3>
+            <label for="file">Image 1:</label>
+            <input type="file" name="file" id="file"><br>
+            <label for="file">Image 2:</label>
+            <input type="file" name="file" id="file1"><br>
+            <label for="file">Image 3:</label>
+            <input type="file" name="file" id="file2"><br>
+
+            <input type="submit" name="submit" value="Submit">
+        </form>
+
+        <form>
+            <h3>Introduction</h3>
+            <p>
+            <label>Header:</label>
+            <input type="text" name="intro_header" id="header" placeholder="Insert Header here" />
+            </p>
+            <p>
+            <label>Intro:</label>
+                <textarea rows="10" cols="55" name="text" placeholder="What you want to say in the introduction"></textarea>
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+
+        </form>
+
+
+
+
+    </div>
+
+    <footer>
+
+    </footer>
+
+</div><!--End of Page ID-->
+
+
+
+</body>
+<script src="js/min/jquery.min.js"></script>
+<script src="js/cycle2/cycle2.js"></script>
+<script type="text/javascript" src="js/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea"
+    });
+</script>
+
+
+<script>
+
+    function junior_page(){
+        if (document.title=="West Wickham Underwater Hockey - Junior"){
+            document.getElementById("junior").style.display="none";
+            document.getElementById("elite").style.display="show";
+
+        }
+        else {
+            document.getElementById("junior").style.display="show";
+            document.getElementById("elite").style.display="none";
+
+        }
+    }
+
+
+
+
+</script>
+
+
+
+
+</html>
