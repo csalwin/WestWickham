@@ -66,6 +66,9 @@ body {
                 text-decoration: none;
 
               }
+              a:hover, a.active  {
+                background-color: #1D264D;
+              }
 
 
             }
@@ -131,6 +134,23 @@ body {
     }
     }
 
+    /*MEDIA Page*/
+
+    #news {
+      width: 100%;
+      display: block;
+      section.col-2 {
+        width: @width;
+        img{
+          width: @width;
+          height: auto;
+
+        }
+      }
+    }
+
+
+
     /*Contact Form */
 
     #contact_form {
@@ -141,13 +161,23 @@ body {
       form {
         width: 100%;
 
+        label {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        textarea{
+          max-width:100%;
+          height:auto;
+        }
+
 
 
         input, textarea {
           padding: 10px;
-          border: 1px solid #E5E5E5;
+          border: 1px solid #cacaca;
           width: 200px;
-          color: #999999;
+          color: #757575;
 
         }
 
@@ -260,6 +290,21 @@ body {
           }
           .fb-title {
 
+          }
+        }
+
+        /*MEDIA Page*/
+
+        #news {
+
+
+          section.col-2 {
+            width: @width/2;
+            img{
+              width: @width/2;
+
+
+            }
           }
         }
       }

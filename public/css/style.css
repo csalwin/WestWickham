@@ -48,6 +48,10 @@ body #page header nav #links ul li a {
   padding: 17px 0;
   text-decoration: none;
 }
+body #page header nav #links ul li a:hover,
+body #page header nav #links ul li a.active {
+  background-color: #1D264D;
+}
 body #page header nav #selector ul {
   margin: 0 5px;
 }
@@ -68,6 +72,7 @@ body #page header nav #selector ul li a {
   text-decoration: none;
 }
 body #page #content {
+  /*MEDIA Page*/
   /*Contact Form */
 }
 body #page #content .cycle-slideshow {
@@ -80,6 +85,17 @@ body #page #content table td {
   outline: 1px solid #000;
   padding: 10px;
 }
+body #page #content #news {
+  width: 100%;
+  display: block;
+}
+body #page #content #news section.col-2 {
+  width: 100%;
+}
+body #page #content #news section.col-2 img {
+  width: 100%;
+  height: auto;
+}
 body #page #content #contact_form {
   display: block;
   width: 100%;
@@ -90,12 +106,21 @@ body #page #content #contact_form form {
   width: 100%;
   /*submit button*/
 }
+body #page #content #contact_form form label {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+body #page #content #contact_form form textarea {
+  max-width: 100%;
+  height: auto;
+}
 body #page #content #contact_form form input,
 body #page #content #contact_form form textarea {
   padding: 10px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #cacaca;
   width: 200px;
-  color: #999999;
+  color: #757575;
 }
 body #page #content #contact_form form textarea {
   width: 100%;
@@ -145,6 +170,9 @@ body #page #content #contact_form form .submit input {
     left: 345px;
     top: -90px;
   }
+  body #page #content {
+    /*MEDIA Page*/
+  }
   body #page #content .cycle-slideshow {
     display: inherit;
   }
@@ -157,6 +185,12 @@ body #page #content #contact_form form .submit input {
     width: 240px;
     float: left;
     padding: 5px;
+  }
+  body #page #content #news section.col-2 {
+    width: 50%;
+  }
+  body #page #content #news section.col-2 img {
+    width: 50%;
   }
 }
 @media (min-width: 960px) {
