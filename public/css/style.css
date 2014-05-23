@@ -7,14 +7,14 @@ body #page {
 }
 body #page header {
   margin-top: 0px;
-  background-color: #29366f;
+  background: #2e3e7a;
   height: 250px;
 }
 body #page header h1 span {
   display: none;
 }
 body #page header h1 a {
-  background: url("../images/home/West%20Wickham_mens%20suit%20V2.jpg") no-repeat center center;
+  background: url("../images/home/West-Wickham_mens-suit-V2.png") no-repeat center center;
   display: block;
   width: 160px;
   height: 80px;
@@ -135,8 +135,14 @@ body #page #content #contact_form form .form label {
 body #page #content #contact_form form .submit input {
   width: 100px;
   height: 40px;
-  background-color: #29366f;
+  background-color: #2e3e7a;
   color: #FFF;
+}
+body #page #content section #uwhvideos {
+  display: none;
+}
+body #page #content section #uwhvideos #uwhlinks {
+  display: show;
 }
 @media (min-width: 750px) {
   body #page {
@@ -144,6 +150,8 @@ body #page #content #contact_form form .submit input {
     margin: 0 auto;
   }
   body #page header {
+    background: #2e3e7a linear-gradient(45deg, #2e3e7a 50%, rgba(255, 255, 255, 0.5) 100%);
+    /* W3C */
     margin-top: 0px;
     height: 120px;
   }
@@ -192,12 +200,20 @@ body #page #content #contact_form form .submit input {
   body #page #content #news section.col-2 img {
     width: 50%;
   }
+  body #page #content section #uwhvideos {
+    display: inherit;
+  }
+  body #page #content section #uwhlinks {
+    display: none;
+  }
 }
 @media (min-width: 960px) {
   body #page {
     width: 960px;
   }
   body #page header {
+    background: #2e3e7a linear-gradient(45deg, #2e3e7a 34%, rgba(255, 255, 255, 0.6) 100%);
+    /* W3C */
     margin-top: 0px;
   }
   body #page header nav {
