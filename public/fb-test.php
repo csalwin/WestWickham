@@ -18,12 +18,12 @@
 
             <div id="links">
                 <ul>
-                    <li id="home_btn"><a href="index.html">Home</a></li>
+                    <li id="home_btn"><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="events.html">Events</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="media.html">Media</a></li>
-                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="shop.html">Shop</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
 
@@ -42,25 +42,47 @@
         </nav>
     </header>
 
-
     <div id="content">
 
 
-        <h3>We have nothing for sale just yet...</h3>
-        <h3>but here are some shops to get some gear</h3>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
 
-        <a href="http://bentfishdesign.com/">Bentfish Design (UK)</a><br>
-        <a href="http://www.canamuwhgear.com/">Can-am Shop (US)</a><br>
-        <a href="http://underwaterhockey.biz/">Snorkle battle Extream (NZ)</a>
+        <div class="fb-like-box" data-href="https://www.facebook.com/westwickhamuwh"
+             data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="true" data-width="960"></div>
+<?php
+        $page_id = '169748219778916';
+        $access_token = '705713249476165|TxidQYQ89IiMMNUaTj-UqEOZjTY';
+        //Get the JSON
+        $json_object = @file_get_contents('https://graph.facebook.com/' . $page_id .
+            '/posts?access_token=' . $access_token);
+        //Interpret data
+        $fbdata = json_decode($json_object);
+
+
+        foreach ($fbdata->data as $post )
+        {
+            $posts .= '<p><a href="' . $post->link . '">' . $post->story . '</a></p>';
+            $posts .= '<p><a href="' . $post->link . '">' . $post->message . '</a></p>';
+            $posts .= '<p>' . $post->description . '</p>';
+            $posts .= '<br />';
+        }
+
+
+?>
 
 
 
+        <p>169748219778916</p>
 
 
-        </div>
     </div>
-
-
 
     <footer>
 
