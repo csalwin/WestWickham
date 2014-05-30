@@ -2,7 +2,7 @@
 $host = "localhost";
 $db_name = "webdesj3_westwic";
 $username = "root";
-$password = "";
+$password = "password";
 
 try {
     $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
