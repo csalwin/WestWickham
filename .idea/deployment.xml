@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="local-Westwickham" />
+  <component name="PublishConfigData" serverName="local-westwikham">
+    <serverData>
+      <paths name="VM-WestWickham">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/public" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="local-westwikham">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/public" web="/WestWickham/public/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
 </project>
 
