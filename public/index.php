@@ -9,11 +9,13 @@ $data = new app\controllers\DefaultController();
 <head>
     <meta charset="UTF-8">
     <title><?php echo $data->title; ?></title>
+
     <script src="js/min/modernizr.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link onload="junior_page()" rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+
 </head>
 
-<body onload="junior_page()">
+<body>
 <div id="page">
 
     <header>
@@ -64,6 +66,7 @@ $data = new app\controllers\DefaultController();
 
 
     <footer>
+        <a href="index.php?page=login">Admin</a>
 
     </footer>
 
@@ -78,7 +81,7 @@ $data = new app\controllers\DefaultController();
 <script>
 
     function junior_page(){
-        if (document.title=="West Wickham Underwater Hockey - Junior"){
+        if (document.title.contains==" - Junior"){
             document.getElementById("junior").style.display="none";
             document.getElementById("elite").style.display="show";
 
@@ -89,6 +92,15 @@ $data = new app\controllers\DefaultController();
 
         }
     }
+
+    $(document).ready(function{
+        var i = document.location.href.lastIndexOf("/");
+        var currentPHP = document.location.href.substr(i+1);
+        $("#links ul li a").removeClass('active');
+        $("#links ul li a[href^="'+currentPHP+'"]").addClass('active');
+    });
+
+
 
 
 

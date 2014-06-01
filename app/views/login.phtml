@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['usr']) && isset($_SESSION['pswd'])){
+    header("Location: index.php?page=admin");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,18 +48,18 @@
 
         <img src="images/home/West%20Wickham_mens%20suit%20V2.jpg">
         <div id="contact_form">
-        <form id="login" >
-            <p class="username">
-                <input type="text" name="name" id="username" placeholder="User Name" />
-            </p>
+            <form id="login" name="login" method="post" action="checklogin.php" >
+                <p class="username">
+                    <input type="text" name="usr" id="myusername" placeholder="User Name" />
+                </p>
 
-            <p class="password">
-                <input type="password" name="password" id="password" placeholder="Password" />
-            </p>
-            <p class="submit">
-                <input type="submit" value="Send" />
-            </p>
-        </form>
+                <p class="password">
+                    <input type="password" name="pswd" id="mypassword" placeholder="Password" />
+                </p>
+                <p class="submit">
+                    <input type="submit" value="Login" name="login" />
+                </p>
+            </form>
         </div>
 
 

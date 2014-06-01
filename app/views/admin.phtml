@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION['usr']) || !isset($_SESSION['pswd'])){
+    header("Location: index.php?page=login");
+}
+//include ‘logoff.html’;
+/* in this example my content only containing a html with logout link*/
+?>
+
+<h2><a href=logoff.php>Logout</a></h2>
+
 <h2 style="color: red">This Is the Admin Page.</h2>
 <p>From Here you can change certain elements of the content. Using the Navigation will resultin you going back to the main site to see the changes you have made.</p>
 

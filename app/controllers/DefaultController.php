@@ -48,6 +48,10 @@ class DefaultController {
                 $this->title = 'Contact Us';
                 $this->content = 'contact';
                 break;
+            case 'login':
+                $this->title = 'Login-page';
+                $this->content = 'login';
+                break;
             case 'admin':
                 $this->title = 'Admin-Page';
                 $this->content = 'admin';
