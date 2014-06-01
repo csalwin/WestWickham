@@ -1,30 +1,36 @@
+<?php
+include('../app/controllers/DefaultController.php');
+
+//Creates an Instance of Class Default controller
+$data = new app\controllers\DefaultController();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>West Wickham Underwater Hockey</title>
+    <meta charset="UTF-8">
+    <title><?php echo $data->title; ?></title>
     <script src="js/min/modernizr.min.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 </head>
+
 <body onload="junior_page()">
 <div id="page">
 
     <header>
 
-        <h1><a href="index.html"><span>West Wickham Underwater Hockey Club</span></a></h1><!-- Logo image -->
+        <h1><a href="index.php?page=home"><span>West Wickham Underwater Hockey Club</span></a></h1><!-- Logo image -->
         <nav>
 
 
             <div id="links">
                 <ul>
-                    <li id="home_btn"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="media.html">Media</a></li>
-                    <li><a href="shop.html" class="active">Shop</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li id="home_btn"><a href="index.php?page=home" class="active">Home</a></li>
+                    <li><a href="index.php?page=about">About</a></li>
+                    <li><a href="index.php?page=events">Events</a></li>
+                    <li><a href="index.php?page=news">News</a></li>
+                    <li><a href="index.php?page=media">Media</a></li>
+                    <li><a href="index.php?page=shop">Shop</a></li>
+                    <li><a href="index.php?page=contact">Contact</a></li>
                 </ul>
 
             </div>
@@ -40,19 +46,14 @@
             </div>
 
         </nav>
+
+
     </header>
 
 
     <div id="content">
 
-
-        <h3>We have nothing for sale just yet...</h3>
-        <h3>but here are some shops to get some gear</h3>
-
-        <a href="http://bentfishdesign.com/">Bentfish Design (UK)</a><br>
-        <a href="http://www.canamuwhgear.com/">Can-am Shop (US)</a><br>
-        <a href="http://underwaterhockey.biz/">Snorkle battle Extream (NZ)</a>
-
+        <?php include ('../app/views/'.$data->content.'.phtml'); ?>
 
 
 

@@ -1,0 +1,125 @@
+<h2 style="color: red">This Is the Admin Page.</h2>
+<p>From Here you can change certain elements of the content. Using the Navigation will resultin you going back to the main site to see the changes you have made.</p>
+
+
+<form action="upload_file.php" method="post"
+      enctype="multipart/form-data">
+    <h3>Slider Images</h3>
+    <label for="file">Image 1:</label>
+    <input type="file" name="file" id="file"><br>
+    <label for="file">Image 2:</label>
+    <input type="file" name="file" id="file1"><br>
+    <label for="file">Image 3:</label>
+    <input type="file" name="file" id="file2"><br>
+
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<form>
+    <h3>Introduction</h3>
+    <p>
+        <label>Header:</label>
+        <input type="text" name="intro_header" id="header" placeholder="Insert Header here" />
+    </p>
+    <p>
+        <label>Intro:</label>
+        <textarea rows="10" cols="55" name="text" placeholder="What you want to say in the introduction"></textarea>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</form>
+
+
+
+<h3>Events</h3>
+
+<?php
+//include database connection
+include 'connect.php';
+
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+
+// if it was redirected from delete.php
+if($action=='deleted'){
+    echo "<div>Record was deleted.</div>";
+}
+
+//select all data
+$query = "SELECT * FROM events";
+$stmt = $con->prepare( $query );
+$stmt->execute();
+
+//this is how to get number of rows returned
+$num = $stmt->rowCount();
+
+echo "<a href='add.php'>Create New Record</a>";
+
+if($num>0){ //check if more than 0 record found
+
+    echo "<table border='1'>";//start table
+
+    //creating our table heading
+    echo "<tr>";
+    echo "<th>Event</th>";
+    echo "<th>Date</th>";
+    echo "<th>Location</th>";
+    //echo "<th>Action</th>";
+    echo "</tr>";
+
+    //retrieve our table contents
+    //fetch() is faster than fetchAll()
+    //http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        //extract row
+        //this will make $row['firstname'] to
+        //just $firstname only
+        extract($row);
+
+        //creating new table row per record
+        echo "<tr>";
+        echo "<td>{$eventname}</td>";
+        echo "<td>{$eventdate}</td>";
+        echo "<td>{$eventlocation}</td>";
+        echo "<td>";
+        //we will use this links on next part of this post
+        echo "<a href='edit.php?id={$id}'>Edit</a>";
+        echo " / ";
+        //we will use this links on next part of this post
+        echo "<a href='#' onclick='delete_user( {$id} );'>Delete</a>";
+        echo "</td>";
+        echo "</tr>";
+    }
+
+    //end table
+    echo "</table>";
+
+}
+
+//if no records found
+else{
+    echo "No records found.";
+}
+
+?>
+
+<script type='text/javascript'>
+    function delete_user( id ){
+
+        var answer = confirm('Are you sure?');
+        if ( answer ){
+
+            //if user clicked ok, pass the id to delete.php and execute the delete query
+            window.location = 'delete.php?id=' + id;
+
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea"
+    });
+</script>
