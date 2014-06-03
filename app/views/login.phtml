@@ -5,17 +5,17 @@ if(isset($_SESSION['usr']) && isset($_SESSION['pswd'])){
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>West Wickham Underwater Hockey</title>
-    <script src="js/min/modernizr.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+
     <style>
         body {
             background-color: #29366f;
+        }
+        body header {
+            display: none;
+        }
+        body #page {
+            width: 327px;
+            margin: 0 auto;
         }
         #content {
             display: block;
@@ -46,7 +46,7 @@ if(isset($_SESSION['usr']) && isset($_SESSION['pswd'])){
 
     <div id="content">
 
-        <img src="images/home/West%20Wickham_mens%20suit%20V2.jpg">
+        <a href="index.php?page=home"><img src="images/home/West%20Wickham_mens%20suit%20V2.jpg"></a>
         <div id="contact_form">
             <form id="login" name="login" method="post" action="checklogin.php" >
                 <p class="username">
@@ -77,29 +77,3 @@ if(isset($_SESSION['usr']) && isset($_SESSION['pswd'])){
 
 
 </body>
-<script src="js/min/jquery.min.js"></script>
-<script src="js/cycle2/cycle2.js"></script>
-
-<script>
-
-    function junior_page(){
-        if (document.title=="West Wickham Underwater Hockey - Junior"){
-            document.getElementById("junior").style.display="none";
-            document.getElementById("elite").style.display="show";
-
-        }
-        else {
-            document.getElementById("junior").style.display="show";
-            document.getElementById("elite").style.display="none";
-
-        }
-    }
-
-
-
-
-</script>
-
-
-
-</html>

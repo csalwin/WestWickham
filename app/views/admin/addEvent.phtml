@@ -6,12 +6,13 @@
 </head>
 <body>
 
-<h1>Edit Events</h1>
+<h1>Add Event</h1>
 
 <?php
-if($_POST['submit']){
-    include('../app/controllers/DefaultController.php');
-    $session = new app\controllers\DefaultController();
+
+$session = new app\controllers\DefaultController();
+if(isset($_POST['action'] )){
+
     $session->addEvent();
 }
 ?>
@@ -32,13 +33,14 @@ if($_POST['submit']){
             <td><input type='text' name='eventdate' /></td>
         </tr>
 
-            <td></td>
-            <td>
-                <input type='hidden' name='action' value='create' />
-                <input type='submit' value='Save' />
+        <td><input type='hidden' name='action' value='create' />
+            <input type='submit' value='Save' />
+        </td>
+        <td>
 
-                <a href='index.php?page=admin'>Back to admin</a>
-            </td>
+
+            <a href='index.php?page=admin'>Back to admin</a>
+        </td>
         </tr>
     </table>
 </form>

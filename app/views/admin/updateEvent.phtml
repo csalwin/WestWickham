@@ -1,14 +1,8 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>PDO Update a Record</title>
-
-</head>
-<body>
-
-<h1>PDO: Update a Record</h1>
-
 <?php
+
+$session = new app\controllers\DefaultController();
+$session->updateEvent($_GET['id']);
+
 //include database connection
 //include 'connect.php';
 /*
@@ -44,13 +38,13 @@ if($action == "update"){
     }catch(PDOException $exception){ //to handle error
         echo "Error: " . $exception->getMessage();
     }
-}*/
+}
 
 try {
 
     //prepare query
     $query = "SELECT * FROM events WHERE id = ? limit 0,1";
-    $stmt = $con->prepare( $query );
+    $stmt = $this->con->prepare( $query );
 
     //this is the first question mark
     $stmt->bindParam(1, $_REQUEST['id']);
@@ -71,11 +65,13 @@ try {
 }catch(PDOException $exception){ //to handle error
     echo "Error: " . $exception->getMessage();
 }
+*/
 
 
 ?>
+
 <!--we have our html form here where new user information will be entered-->
-<form action='#' method='post' border='0'>
+<!--<form action='#' method='post' border='0'>
     <table>
         <tr>
             <td>eventname</td>
@@ -90,20 +86,17 @@ try {
             <td><input type='text' name='eventdate'  value='<?php echo $eventdate;  ?>' /></td>
         </tr>
 
-            <td></td>
-            <td>
-                <!-- so that we could identify what record is to be updated -->
-                <input type='hidden' name='id' value='<?php echo $id ?>' />
+        <td></td>
+        <td>
+            <!-- so that we could identify what record is to be updated -->
+            <!--<input name='id' value='<?php echo $id ?>' />
 
-                <!-- we will set the action to edit -->
-                <input type='hidden' name='action' value='update' />
-                <input type='submit' value='Edit' />
+            <!-- we will set the action to edit -->
+            <!--<input type='hidden' name='action' value='update' />
+            <input type='submit' value='Edit' />
 
-                <a href='index.php?page=admin'>Back to Admin</a>
-            </td>
+            <a href='index.php?page=admin'>Back to Admin</a>
+        </td>
         </tr>
     </table>
 </form>
-
-</body>
-</html>

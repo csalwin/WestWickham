@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors','1');
 include('../app/controllers/DefaultController.php');
 
 //Creates an Instance of Class Default controller
@@ -81,7 +82,7 @@ $data = new app\controllers\DefaultController();
 <script>
 
     function junior_page(){
-        if (document.title.contains==" - Junior"){
+        if (document.title.contains =" - Junior"){
             document.getElementById("junior").style.display="none";
             document.getElementById("elite").style.display="show";
 

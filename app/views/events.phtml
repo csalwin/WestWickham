@@ -7,9 +7,12 @@
 
 <?php
 //include database connection
-include 'connect.php';
+//include 'connect.php';
+//include('../app/controllers/DefaultController.php');
+$session = new app\controllers\DefaultController();
 
-$action = isset($_GET['action']) ? $_GET['action'] : "";
+$session->viewEvent();
+/*$action = isset($_GET['action']) ? $_GET['action'] : "";
 
 
 //select all data
@@ -20,6 +23,10 @@ $stmt->execute();
 //this is how to get number of rows returned
 $num = $stmt->rowCount();
 
+
+
+
+$num = $stmt->rowCount();
 
 
 if($num>0){ //check if more than 0 record found
@@ -63,6 +70,6 @@ else{
 }
 
 ?>
+*/
 
 
-</script>
