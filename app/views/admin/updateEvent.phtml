@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['usr']) || !isset($_SESSION['pswd'])){
+    header("Location: index.php?page=login");
+}
+
 $session = new app\controllers\DefaultController();
 $session->updateEvent($_GET['id']);
 

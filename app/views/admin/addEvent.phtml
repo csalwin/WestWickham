@@ -1,10 +1,10 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>PDO Create Record - http://codeofaninja.com/</title>
+<?php
+session_start();
+if(!isset($_SESSION['usr']) || !isset($_SESSION['pswd'])){
+    header("Location: index.php?page=login");
+}
+?>
 
-</head>
-<body>
 
 <h1>Add Event</h1>
 

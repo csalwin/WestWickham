@@ -63,7 +63,7 @@ class DefaultModel {
                 echo "Error: " . $exception->getMessage();
             }
         }
-    public function updateEvent(){
+    public function updateEvent($id){
         $action = isset( $_POST['action'] ) ? $_POST['action'] : "";
         if($action == "update"){
             try{
@@ -72,9 +72,9 @@ class DefaultModel {
                 //in this case, it seemed like we have so many fields to pass and
                 //its kinda better if we'll label them and not use question marks
                 //like what we used here
-                $query = "update events
-                    set eventname = :eventname, eventlocation = :eventlocation, eventdate = :eventdate
-                    where id = :id";
+                $query = "UPDATE events
+                    SET eventname = :eventname, eventlocation = :eventlocation, eventdate = :eventdate
+                    WHERE id = :id";
 
                 //prepare query for excecution
                 $stmt = $this->con->prepare($query);
