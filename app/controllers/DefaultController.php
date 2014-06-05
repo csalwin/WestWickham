@@ -67,6 +67,10 @@ class DefaultController {
                 $this->title = 'Edit Event';
                 $this->content = 'admin/updateEvent';
                 break;
+            case 'deleteEvent':
+                $this->title = 'Delete Event';
+                $this->content = 'admin/deleteEvent';
+                break;
 
 
         }
@@ -80,9 +84,9 @@ class DefaultController {
     {
         $this->data->updateEvent($id);
     }
-    public function deleteEvent()
+    public function deleteEvent($id)
     {
-        $this->data->deleteEvent();
+        $this->data->deleteEvent($id);
     }
     public function viewEvent()
     {

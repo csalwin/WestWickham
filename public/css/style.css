@@ -88,14 +88,14 @@ body #page #content table td {
   outline: 1px solid #000;
   padding: 10px;
 }
-body #page #content #news {
+body #page #content #press {
   width: 100%;
   display: block;
 }
-body #page #content #news section.col-2 {
+body #page #content #press section.col-2 {
   width: 100%;
 }
-body #page #content #news section.col-2 img {
+body #page #content #press section.col-2 img {
   width: 100%;
   height: auto;
 }
@@ -202,10 +202,10 @@ body #page #content section #uwhvideos #uwhlinks {
     width: 750px;
     height: auto;
   }
-  body #page #content #news section.col-2 {
+  body #page #content #press section.col-2 {
     width: 50%;
   }
-  body #page #content #news section.col-2 img {
+  body #page #content #press section.col-2 img {
     width: 50%;
   }
   body #page #content section #uwhvideos {

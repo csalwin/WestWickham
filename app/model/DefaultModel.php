@@ -25,6 +25,8 @@ class DefaultModel {
             echo "Connection error: " . $exception->getMessage();
         }
     }
+
+
     public function addEvent(){
         $action = isset($_POST['action']) ? $_POST['action'] : "";
 
@@ -63,6 +65,10 @@ class DefaultModel {
                 echo "Error: " . $exception->getMessage();
             }
         }
+
+
+
+
     public function updateEvent($id){
         $action = isset( $_POST['action'] ) ? $_POST['action'] : "";
         if($action == "update"){
@@ -125,15 +131,15 @@ class DefaultModel {
         echo "<form action='#' method='post' border='0'>";
         echo "<table>";
         echo "<tr>";
-                    echo"<td>eventname</td>";
+                    echo"<td>Name of Event</td>";
                     echo "<td><input type='text' name='eventname' value='{$eventname}' /></td>";
                 echo"</tr>";
                 echo"<tr>";
-                    echo"<td>eventlocation</td>";
+                    echo"<td>Location Of Event</td>";
                     echo"<td><input type='text' name='eventlocation' value='{$eventlocation}' /></td>";
                 echo"</tr>";
                 echo"<tr>";
-                    echo"<td>eventdate</td>";
+                    echo"<td>Date Of Event</td>";
                     echo"<td><input type='text' name='eventdate'  value='{$eventdate}' /></td>";
                 echo"</tr>";
 
@@ -152,6 +158,9 @@ class DefaultModel {
             echo"</table>";
         echo"</form>";
         }
+
+
+
     public function viewEvent(){
 
         $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -262,7 +271,7 @@ class DefaultModel {
                 echo "<a href='index.php?page=updateEvent&id={$id}'>Edit</a>";
                 echo " / ";
                 //we will use this links on next part of this post
-                echo "<a href='#' onclick='delete_user( {$id} );'>Delete</a>";
+                echo "<a href='index.php?page=deleteEvent&id={$id}' onclick='return confirm(\"are you sure\")'>Delete</a>";
                 echo "</td>";
 
 
@@ -279,6 +288,29 @@ class DefaultModel {
             echo "No records found.";
         }
 
+    }
+
+    public function deleteEvent($id){
+        try {
+
+            // delete query
+            $query = "DELETE FROM events WHERE id = ?";
+            $stmt = $this->con->prepare($query);
+            $stmt->bindParam(1, $_GET[$id]);
+
+            if($result = $stmt->execute()){
+                // redirect to index page
+                header('Location: index.php?page=admin');
+            }else{
+                die('Unable to delete record.');
+                echo 'Unable To delete record.';
+            }
+        }
+
+// to handle error
+        catch(PDOException $exception){
+            echo "Error: " . $exception->getMessage();
+        }
     }
     }
 
