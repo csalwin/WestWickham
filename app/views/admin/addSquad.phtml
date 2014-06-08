@@ -6,31 +6,44 @@ if(!isset($_SESSION['usr']) || !isset($_SESSION['pswd'])){
 ?>
 
 
-<h1>Add Event</h1>
+<h1>Add Squad Member</h1>
 
 <?php
 
 $session = new app\controllers\DefaultController();
 if(isset($_POST['action'] )){
 
-    $session->addEvent();
+    $session->addSquad();
 }
+
 ?>
 
 <!--we have our html form here where user information will be entered-->
 <form action='#' method='post' border='0'>
     <table>
         <tr>
-            <td>Name Of Event</td>
-            <td><input type='text' name='eventname' /></td>
+            <td>Name of Member</td>
+            <td><input type='text' name='squadname' /></td>
         </tr>
         <tr>
-            <td>Location Of Event</td>
-            <td><input type='text' name='eventlocation' /></td>
+            <td>Member Picture</td>
+            <td><input type='text' name='squadpicture' /></td>
         </tr>
         <tr>
-            <td>Date Of Event</td>
-            <td><input type='date' name='eventdate' /></td>
+            <td>Date of Birth</td>
+            <td><input type='text' name='squaddob' /></td>
+        </tr>
+        <tr>
+            <td>Member Bio</td>
+            <td><input type='text' name='squadbio' /></td>
+        </tr>
+        <tr>
+            <td>Team</td>
+            <td><select name="squadteam">
+                    <option value="First Team">First Team</option>
+                    <option value="Second Team">Development Team</option>
+
+                </select></td>
         </tr>
 
         <td><input type='hidden' name='action' value='create' />

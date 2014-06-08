@@ -73,31 +73,34 @@ try {
 */
 
 
-?>
+
+
+
+/*
 
 <!--we have our html form here where new user information will be entered-->
-<!--<form action='#' method='post' border='0'>
+<form action='#' method='post' border='0'>
     <table>
         <tr>
             <td>eventname</td>
-            <td><input type='text' name='eventname' value='<?php echo $eventname;  ?>' /></td>
+            <td><input type='text' name='eventname' value= '{$eventname}' /></td>
         </tr>
         <tr>
             <td>eventlocation</td>
-            <td><input type='text' name='eventlocation' value='<?php echo $eventlocation;  ?>' /></td>
+            <td><input type='text' name='eventlocation' value='{$eventlocation}' /></td>
         </tr>
         <tr>
             <td>eventdate</td>
-            <td><input type='text' name='eventdate'  value='<?php echo $eventdate;  ?>' /></td>
+            <td><input type='text' name='eventdate'  value='{$eventdate}' /></td>
         </tr>
 
         <td></td>
         <td>
             <!-- so that we could identify what record is to be updated -->
-            <!--<input name='id' value='<?php echo $id ?>' />
+            <input type='hidden' name='id' value='{$id}' />
 
             <!-- we will set the action to edit -->
-            <!--<input type='hidden' name='action' value='update' />
+            <input type='hidden' name='action' value='update' />
             <input type='submit' value='Edit' />
 
             <a href='index.php?page=admin'>Back to Admin</a>
@@ -105,3 +108,15 @@ try {
         </tr>
     </table>
 </form>
+
+*/
+
+?>
+
+<script>
+    if (!Modernizr.inputtypes.date) {
+        $('input[type=date]').datepicker({
+            // Consistent format with the HTML5 picker
+            dateFormat: 'dd/mm/yy'
+        });
+    }</script>

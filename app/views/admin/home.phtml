@@ -58,9 +58,16 @@ if($action=='deleted'){
 }
 
 $session = new app\controllers\DefaultController();
-echo "<a href='index.php?page=addEvent'>Create New Record</a>";
+echo "<a href='index.php?page=addEvent'>Add New Event</a>";
 
 $session->adminViewEvent();
+
+echo "<h3>Squad</h3>";
+
+
+echo "<a href='index.php?page=addSquad'>Add Squad Member</a>";
+
+$session->adminViewSquad();
 /*
 //select all data
 $query = "SELECT * FROM events";

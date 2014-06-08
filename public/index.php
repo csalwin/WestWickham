@@ -10,6 +10,11 @@ $data = new app\controllers\DefaultController();
 <head>
     <meta charset="UTF-8">
     <title><?php echo $data->title; ?></title>
+<!--For the date picker in Admin Panel-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
 
     <script src="js/min/modernizr.min.js"></script>
     <link onload="junior_page()" rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
@@ -31,7 +36,7 @@ $data = new app\controllers\DefaultController();
                     <li><a href="index.php?page=about">About</a></li>
                     <li><a href="index.php?page=events">Events</a></li>
                     <li><a href="index.php?page=news">News</a></li>
-                    <li><a href="index.php?page=media">Media</a></li>
+                    <li><a href="index.php?page=squad">Squad</a></li>
                     <li><a href="index.php?page=shop">Shop</a></li>
                     <li><a href="index.php?page=contact">Contact</a></li>
                 </ul>
@@ -78,6 +83,7 @@ $data = new app\controllers\DefaultController();
 </body>
 <script src="js/min/jquery.min.js"></script>
 <script src="js/cycle2/cycle2.js"></script>
+
 
 <script>
 

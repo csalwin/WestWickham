@@ -5,7 +5,16 @@
         <select name="squadlist">
             <option value="firstTeam">First Team</option>
             <option value="secondTeam">Development Team</option>
-            <option value="committee">Committee</option>
+            <option value="all">All Members</option>
         </select>
     </div>
 </form>
+
+<?php
+
+$session = new app\controllers\DefaultController();
+
+$session->viewSquad();
+
+
+?>

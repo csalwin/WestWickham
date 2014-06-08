@@ -39,9 +39,9 @@ class DefaultController {
                 $this->title = 'Latest Updates';
                 $this->content = 'news';
                 break;
-            case 'media':
-                $this->title = 'In the Club ';
-                $this->content = 'media';
+            case 'squad':
+                $this->title = 'Squad ';
+                $this->content = 'Squad';
                 break;
             case 'shop':
                 $this->title = 'Shop';
@@ -71,10 +71,26 @@ class DefaultController {
                 $this->title = 'Delete Event';
                 $this->content = 'admin/deleteEvent';
                 break;
+            case 'addSquad':
+                $this->title = 'Add Squad Member';
+                $this->content = 'admin/addSquad';
+                break;
+            case 'updateSquad':
+                $this->title = 'Update Squad Member';
+                $this->content = 'admin/updateSquad';
+                break;
+            case 'deleteSquad':
+                $this->title = 'delete Squad Member';
+                $this->content = 'admin/deleteSquad';
+                break;
 
 
         }
 
+    }
+    public function viewEvent()
+    {
+        $this->data->viewEvent();
     }
     public function addEvent()
     {
@@ -88,13 +104,35 @@ class DefaultController {
     {
         $this->data->deleteEvent($id);
     }
-    public function viewEvent()
-    {
-        $this->data->viewEvent();
-    }
     public function adminViewEvent()
     {
         $this->data->adminViewEvent();
     }
+
+
+
+
+    public function viewSquad()
+    {
+        $this->data->viewSquad();
+    }
+    public function addSquad()
+    {
+        $this->data->addSquad();
+    }
+    public function adminViewSquad()
+    {
+        $this->data->adminViewSquad();
+    }
+    public function updateSquad($id)
+    {
+        $this->data->updateSquad($id);
+    }
+
+    public function deleteSquad($id)
+    {
+        $this->data->deleteSquad($id);
+    }
+
 }
 
