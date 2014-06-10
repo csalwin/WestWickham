@@ -188,7 +188,9 @@ class DefaultModel {
 
         $this->num = $stmt->rowCount();
 
+
         if($this->num>0){ //check if more than 0 record found
+
 
             echo "<table border='1'>";//start table
 
@@ -208,11 +210,13 @@ class DefaultModel {
                 //this will make $row['firstname'] to
                 //just $firstname only
                 extract($row);
+                //Convert the date so that it reads Correctly ******************************************************
+                $eventdatedmy = date_format(date_create_from_format('Y-m-d', $eventdate), 'd-m-Y');
 
                 //creating new table row per record
                 echo "<tr>";
                 echo "<td>{$eventname}</td>";
-                echo "<td>{$eventdate}</td>";
+                echo "<td>{$eventdatedmy}</td>";
                 echo "<td>{$eventlocation}</td>";
 
 
@@ -236,7 +240,7 @@ class DefaultModel {
 
 
 //select all data
-        $query = "SELECT * FROM events WHERE DATE_FORMAT(events.eventdate,'%D-%M-%Y')ORDER BY eventdate";
+        $query = "SELECT * FROM events ORDER BY eventdate";
         $stmt = $this->con->prepare( $query );
         $stmt->execute();
 
@@ -270,11 +274,13 @@ class DefaultModel {
                 //this will make $row['firstname'] to
                 //just $firstname only
                 extract($row);
+                //Convert the date so that it reads Correctly ******************************************************
+                $eventdatedmy = date_format(date_create_from_format('Y-m-d', $eventdate), 'd-m-Y');
 
                 //creating new table row per record
                 echo "<tr>";
                 echo "<td>{$eventname}</td>";
-                echo "<td>{$eventdate}</td>";
+                echo "<td>{$eventdatedmy}</td>";
                 echo "<td>{$eventlocation}</td>";
 
                 echo "<td>";
@@ -365,12 +371,14 @@ class DefaultModel {
                 //this will make $row['firstname'] to
                 //just $firstname only
                 extract($row);
+                //Convert the date so that it reads Correctly ******************************************************
+                $squaddobdmy = date_format(date_create_from_format('Y-m-d', $squaddob), 'd-m-Y');
 
                 //creating new table row per record
                 echo "<tr>";
                 echo "<td>{$squadname}</td>";
                 echo "<td>{$squadpicture}</td>";
-                echo "<td>{$squaddob}</td>";
+                echo "<td>{$squaddobdmy}</td>";
                 echo "<td>{$squadbio}</td>";
                 echo "<td>{$squadteam}</td>";
 
@@ -473,12 +481,14 @@ class DefaultModel {
                 //this will make $row['firstname'] to
                 //just $firstname only
                 extract($row);
+                //Convert the date so that it reads Correctly ******************************************************
+                $squaddobdmy = date_format(date_create_from_format('Y-m-d', $squaddob), 'd-m-Y');
 
                 //creating new table row per record
                 echo "<tr>";
                 echo "<td>{$squadname}</td>";
                 echo "<td>{$squadpicture}</td>";
-                echo "<td>{$squaddob}</td>";
+                echo "<td>{$squaddobdmy}</td>";
                 echo "<td>{$squadbio}</td>";
                 echo "<td>{$squadteam}</td>";
 
