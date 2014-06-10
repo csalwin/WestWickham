@@ -8,6 +8,7 @@ body {
   width: 100%;
 
   #page {
+    overflow: hidden;
     padding: 0 @padding;
     header {
 
@@ -115,6 +116,9 @@ body {
 
     }
   #content {
+
+    overflow: hidden;
+
     .cycle-slideshow {
       display: none;
 
@@ -126,6 +130,7 @@ body {
 
     }
     #col-3 {
+
       .fb-post {
 
       }
@@ -224,6 +229,28 @@ body {
   }
     footer {
 
+      width: 100%;
+      height: 30px;
+      background-color: @color;
+      margin-bottom: 10px;
+
+
+      ul{
+
+        list-style: none;
+        float: right;
+
+        li{
+          margin: @padding;
+
+          a{
+            font-style: none;
+            color: #FFFFFF;
+
+          }
+
+        }
+      }
 
     }
   }
@@ -296,6 +323,8 @@ body {
         }
         .col-3 {
 
+
+
           .fb-post {
             display: block;
             width: 720px/3;
@@ -314,9 +343,11 @@ body {
         }
 
 
-        /*MEDIA Page*/
+        /*about Page*/
 
         #press {
+
+          margin: 0 auto;
 
 
           section.col-2 {

@@ -17,7 +17,7 @@ $data = new app\controllers\DefaultController();
 
 
     <script src="js/min/modernizr.min.js"></script>
-    <link onload="junior_page()" rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link onload="junior_page()"  rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 
 </head>
 
@@ -32,7 +32,7 @@ $data = new app\controllers\DefaultController();
 
             <div id="links">
                 <ul>
-                    <li id="home_btn"><a href="index.php?page=home" class="active">Home</a></li>
+                    <li id="home_btn"><a href="index.php?page=home">Home</a></li>
                     <li><a href="index.php?page=about">About</a></li>
                     <li><a href="index.php?page=events">Events</a></li>
                     <li><a href="index.php?page=news">News</a></li>
@@ -67,12 +67,18 @@ $data = new app\controllers\DefaultController();
 
 
         </div>
-    </div>
+
 
 
 
     <footer>
-        <a href="index.php?page=login">Admin</a>
+
+        <ul>
+            <li>
+                <a href="index.php?page=login">Admin</a>
+            </li>
+        </ul>
+
 
     </footer>
 
@@ -88,7 +94,7 @@ $data = new app\controllers\DefaultController();
 <script>
 
     function junior_page(){
-        if (document.title.contains =" - Junior"){
+        if (document.title=="West Wickham Underwater Hockey - Junior"){
             document.getElementById("junior").style.display="none";
             document.getElementById("elite").style.display="show";
 
@@ -100,12 +106,6 @@ $data = new app\controllers\DefaultController();
         }
     }
 
-    $(document).ready(function{
-        var i = document.location.href.lastIndexOf("/");
-        var currentPHP = document.location.href.substr(i+1);
-        $("#links ul li a").removeClass('active');
-        $("#links ul li a[href^="'+currentPHP+'"]").addClass('active');
-    });
 
 
 

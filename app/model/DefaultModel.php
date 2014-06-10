@@ -13,8 +13,8 @@ class DefaultModel {
     public function __construct(){
         $host = "localhost";
         $db_name = "webdesj3_westwic";
-        $username = "root";
-        $password = "password";
+        $username = "webdesj3_westwic";
+        $password = "password123";
 
         try {
             $this->con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
@@ -176,7 +176,7 @@ class DefaultModel {
 
 
 //select all data
-        $query = "SELECT * FROM events";
+        $query = "SELECT * FROM events ORDER BY eventdate";
         $stmt = $this->con->prepare( $query );
         $stmt->execute();
 
@@ -236,12 +236,14 @@ class DefaultModel {
 
 
 //select all data
-        $query = "SELECT * FROM events";
+        $query = "SELECT * FROM events WHERE DATE_FORMAT(events.eventdate,'%D-%M-%Y')ORDER BY eventdate";
         $stmt = $this->con->prepare( $query );
         $stmt->execute();
 
 //this is how to get number of rows returned
         $this->num = $stmt->rowCount();
+
+
 
 
 
@@ -329,7 +331,7 @@ class DefaultModel {
 
 
 //select all data
-        $query = "SELECT * FROM squad";
+        $query = "SELECT * FROM squad ORDER BY squadname, squaddob";
         $stmt = $this->con->prepare( $query );
         $stmt->execute();
 
@@ -399,7 +401,7 @@ class DefaultModel {
         try{
 
             //write query
-            $query = "INSERT INTO squad SET squadname = ?, squaddob = ?, squadbio = ?, squadteam = ?";
+            $query = "INSERT INTO squad SET squadname = ?, squadpicture = ?, squaddob = ?, squadbio = ?, squadteam = ?";
 
             //prepare query for excecution
             $stmt = $this->con->prepare($query);
@@ -412,9 +414,11 @@ class DefaultModel {
 
 
             //this is the third question mark
-            $stmt->bindParam(2, $_POST['squaddob']);
-            $stmt->bindParam(3, $_POST['squadbio']);
-            $stmt->bindParam(4, $_POST['squadteam']);
+            $stmt->bindParam(2, $_POST['squadpicture']);
+            $stmt->bindParam(3, $_POST['squaddob']);
+
+            $stmt->bindParam(4, $_POST['squadbio']);
+            $stmt->bindParam(5, $_POST['squadteam']);
 
 
             // Execute the query
@@ -435,7 +439,7 @@ class DefaultModel {
 
 
 //select all data
-        $query = "SELECT * FROM squad";
+        $query = "SELECT * FROM squad ORDER BY squadname, squaddob";
         $stmt = $this->con->prepare( $query );
         $stmt->execute();
 

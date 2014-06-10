@@ -41,7 +41,7 @@ class DefaultController {
                 break;
             case 'squad':
                 $this->title = 'Squad ';
-                $this->content = 'Squad';
+                $this->content = 'squad';
                 break;
             case 'shop':
                 $this->title = 'Shop';
@@ -135,4 +135,3 @@ class DefaultController {
     }
 
 }
-

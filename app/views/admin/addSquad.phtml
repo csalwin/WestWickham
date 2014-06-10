@@ -16,6 +16,16 @@ if(isset($_POST['action'] )){
     $session->addSquad();
 }
 
+include "../app/includes/simpleImage.php";
+
+try {
+    $img = new abeautifulsite\SimpleImage('squadpicture');
+    $img->best_fit(320, 200)->save('images/squad/profile/result.jpg');
+} catch(Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+}
+
+
 ?>
 
 <!--we have our html form here where user information will be entered-->
@@ -27,15 +37,15 @@ if(isset($_POST['action'] )){
         </tr>
         <tr>
             <td>Member Picture</td>
-            <td><input type='text' name='squadpicture' /></td>
+            <td><input type='file' name='squadpicture' /></td>
         </tr>
         <tr>
             <td>Date of Birth</td>
-            <td><input type='text' name='squaddob' /></td>
+            <td><input type='date' name='squaddob' /></td>
         </tr>
         <tr>
             <td>Member Bio</td>
-            <td><input type='text' name='squadbio' /></td>
+            <td><textarea type='text' name='squadbio'  ></textarea></td>
         </tr>
         <tr>
             <td>Team</td>
@@ -62,6 +72,6 @@ if(isset($_POST['action'] )){
     if (!Modernizr.inputtypes.date) {
         $('input[type=date]').datepicker({
             // Consistent format with the HTML5 picker
-            dateFormat: 'dd/mm/yy'
+            dateFormat: 'yy-mm-dd'
         });
     }</script>
