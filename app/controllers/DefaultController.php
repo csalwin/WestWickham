@@ -118,7 +118,8 @@ class DefaultController {
     }
     public function addSquad()
     {
-        $this->data->addSquad();
+        $this->data->addSquad($_FILES['squadpicture']);
+
     }
     public function adminViewSquad()
     {

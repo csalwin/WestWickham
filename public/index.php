@@ -84,13 +84,8 @@ $data = new app\controllers\DefaultController();
 
 </div><!--End of Page ID-->
 
-
-
-</body>
 <script src="js/min/jquery.min.js"></script>
 <script src="js/cycle2/cycle2.js"></script>
-
-
 <script>
 
     function junior_page(){
@@ -113,6 +108,11 @@ $data = new app\controllers\DefaultController();
 
 
 </script>
+
+</body>
+
+
+
 
 
 

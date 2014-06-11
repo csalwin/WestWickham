@@ -14,22 +14,14 @@ $session = new app\controllers\DefaultController();
 if(isset($_POST['action'] )){
 
     $session->addSquad();
-}
 
-include "../app/includes/simpleImage.php";
-
-try {
-    $img = new abeautifulsite\SimpleImage('squadpicture');
-    $img->best_fit(320, 200)->save('images/squad/profile/result.jpg');
-} catch(Exception $e) {
-    echo 'Error: ' . $e->getMessage();
 }
 
 
 ?>
 
 <!--we have our html form here where user information will be entered-->
-<form action='#' method='post' border='0'>
+<form action='index.php?page=addSquad' method='post' border='0' enctype="multipart/form-data">
     <table>
         <tr>
             <td>Name of Member</td>

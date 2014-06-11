@@ -8,7 +8,11 @@
 
 namespace app\model;
 
+
+
+use apps\base\models\SimpleImage;
 use \PDO;
+include ('../app/model/SimpleImage.php');
 class DefaultModel {
     public function __construct(){
         $host = "localhost";
@@ -377,7 +381,7 @@ class DefaultModel {
                 //creating new table row per record
                 echo "<tr>";
                 echo "<td>{$squadname}</td>";
-                echo "<td>{$squadpicture}</td>";
+                echo "<td><img src='images/squad/profile/{$squadpicture}' width='150px'/></td>";
                 echo "<td>{$squaddobdmy}</td>";
                 echo "<td>{$squadbio}</td>";
                 echo "<td>{$squadteam}</td>";
@@ -401,6 +405,11 @@ class DefaultModel {
 
     public function addSquad(){
         $action = isset($_POST['action']) ? $_POST['action'] : "";
+        $imagefile = $_FILES['squadpicture']['name'];
+        if($image = new SimpleImage()) {
+            $image->load($_FILES['squadpicture']['tmp_name']);
+            $image->resizeToHeight(320);
+            $image->save('images/squad/profile/'.$_FILES['squadpicture']['name']);
 
         //if($action=='create'){
         //include database connection
@@ -418,11 +427,7 @@ class DefaultModel {
             //this is the first question mark
             $stmt->bindParam(1, $_POST['squadname']);
 
-            //this is the second question mark
-
-
-            //this is the third question mark
-            $stmt->bindParam(2, $_POST['squadpicture']);
+            $stmt->bindParam(2, $_FILES['squadpicture']['name']);
             $stmt->bindParam(3, $_POST['squaddob']);
 
             $stmt->bindParam(4, $_POST['squadbio']);
@@ -441,6 +446,22 @@ class DefaultModel {
             echo "Error: " . $exception->getMessage();
         }
     }
+
+    /*public function addImage()
+    {
+        if($image = new SimpleImage($_FILES['squadpicture'])) {
+            $this->filename = basename($_FILES['squadpicture']['name']);
+            $image->resizeToHeight(320);
+            $image->save('images/squad/profile'.$this->file);
+            $sql = "INSERT INTO squad(id,image) VALUES (null,?)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(array(
+                $this->filename
+            ));
+
+        }*/
+    }
+
     public function adminViewSquad(){
 
         $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -487,7 +508,7 @@ class DefaultModel {
                 //creating new table row per record
                 echo "<tr>";
                 echo "<td>{$squadname}</td>";
-                echo "<td>{$squadpicture}</td>";
+                echo "<td><img src='images/squad/profile/{$squadpicture}' width='150px'/></td>";
                 echo "<td>{$squaddobdmy}</td>";
                 echo "<td>{$squadbio}</td>";
                 echo "<td>{$squadteam}</td>";
