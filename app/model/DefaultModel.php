@@ -10,9 +10,10 @@ namespace app\model;
 
 
 
-use apps\base\models\SimpleImage;
+
+use abeautifulsite\SimpleImage;
 use \PDO;
-include ('../app/model/SimpleImage.php');
+include ('../app/includes/simpleImage.php');
 class DefaultModel {
     public function __construct(){
         $host = "localhost";
@@ -355,17 +356,7 @@ class DefaultModel {
 
         if($this->num>0){ //check if more than 0 record found
 
-            echo "<table border='1'>";//start table
 
-            //creating our table heading
-            echo "<tr>";
-            echo "<th>Name</th>";
-            echo "<th>Picture</th>";
-            echo "<th>Date of Birth</th>";
-            echo "<th>Bio</th>";
-            echo "<th>Team</th>";
-            //echo "<th>Action</th>";
-            echo "</tr>";
 
             //retrieve our table contents
             //fetch() is faster than fetchAll()
@@ -379,19 +370,22 @@ class DefaultModel {
                 $squaddobdmy = date_format(date_create_from_format('Y-m-d', $squaddob), 'd-m-Y');
 
                 //creating new table row per record
-                echo "<tr>";
-                echo "<td>{$squadname}</td>";
-                echo "<td><img src='images/squad/profile/{$squadpicture}' width='150px'/></td>";
-                echo "<td>{$squaddobdmy}</td>";
-                echo "<td>{$squadbio}</td>";
-                echo "<td>{$squadteam}</td>";
+                echo '<div class="profile">';
+                echo "<img src='images/squad/profile/{$squadpicture}' width='150px'/>";
+                echo '<div class="profileinfo">';
+                echo "<h4>{$squadname}</h4>";
+                echo '<div class="team">('.$squadteam.')</div>';
+
+                echo "<h5>{$squaddobdmy}</h5>";
+                echo '<p class="bio">'.$squadbio.'</p>';
+                echo '</div>';
+                echo '</div>';
 
 
-                echo "</tr>";
+
             }
 
-            //end table
-            echo "</table>";
+
 
         }
 
@@ -408,7 +402,9 @@ class DefaultModel {
         $imagefile = $_FILES['squadpicture']['name'];
         if($image = new SimpleImage()) {
             $image->load($_FILES['squadpicture']['tmp_name']);
-            $image->resizeToHeight(320);
+            //$image->resizeToHeight(135);
+            //$image->resizeToWidth(180);
+            $image->best_fit(180, 240);
             $image->save('images/squad/profile/'.$_FILES['squadpicture']['name']);
 
         //if($action=='create'){
@@ -482,7 +478,7 @@ class DefaultModel {
 
         if($this->num>0){ //check if more than 0 record found
 
-            echo "<table border='1'>";//start table
+            echo "<table border='1' style='table td {max-width: 400px;}'>";//start table
 
             //creating our table heading
             echo "<tr>";

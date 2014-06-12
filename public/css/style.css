@@ -75,7 +75,12 @@ body #page header nav #selector ul li a {
 body #page #content {
   overflow: hidden;
   /*MEDIA Page*/
+  /*Squad Page */
   /*Contact Form */
+}
+body #page #content table td {
+  max-width: 400px;
+  overflow: hidden;
 }
 body #page #content .cycle-slideshow {
   display: none;
@@ -100,6 +105,36 @@ body #page #content #press section.col-2 {
 body #page #content #press section.col-2 img {
   width: 100%;
   height: auto;
+}
+body #page #content .profile {
+  display: block;
+  margin: 2px auto;
+  float: left;
+  border-bottom: #2e3e7a solid 2px;
+  width: 100%;
+  padding: 0 10px;
+  overflow: hidden;
+}
+body #page #content .profile img {
+  float: left;
+  width: 18%;
+}
+body #page #content .profile .profileinfo {
+  width: 75%;
+  float: left;
+  margin: 5px;
+  padding-left: 10px;
+}
+body #page #content .profile .profileinfo h4 {
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  float: left;
+}
+body #page #content .profile .profileinfo .team {
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: lighter;
 }
 body #page #content #contact_form {
   display: block;
@@ -201,7 +236,20 @@ body #page footer ul li a {
     top: -90px;
   }
   body #page #content {
+    /*Squad page */
     /*about Page*/
+  }
+  body #page #content .profile {
+    width: 345px;
+    height: auto;
+    max-height: 300px;
+    border-bottom: none;
+  }
+  body #page #content .profile img {
+    width: 100px;
+  }
+  body #page #content .profile .profileinfo {
+    width: 220px;
   }
   body #page #content .cycle-slideshow {
     display: inherit;
@@ -264,6 +312,9 @@ body #page footer ul li a {
     left: 480px;
     top: -90px;
   }
+  body #page #content {
+    /*Squad page*/
+  }
   body #page #content .cycle-slideshow img {
     width: 960px;
     height: auto;
@@ -274,5 +325,13 @@ body #page footer ul li a {
   }
   body #page #content .col-3 .fb-post {
     width: 310px;
+  }
+  body #page #content .profile {
+    width: 450px;
+    margin: 0 auto;
+    height: 250px;
+  }
+  body #page #content .profile img {
+    width: 180px;
   }
 }

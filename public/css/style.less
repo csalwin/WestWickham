@@ -116,6 +116,10 @@ body {
 
     }
   #content {
+    table td{
+      max-width: 400px;
+      overflow: hidden;
+    }
 
     overflow: hidden;
 
@@ -159,6 +163,45 @@ body {
 
         }
       }
+    }
+    /*Squad Page */
+    .profile{
+      display: block;
+      margin: 2px auto;
+      float: left;
+      border-bottom: @color solid 2px;
+      width: 100%;
+
+      padding: 0 10px;
+
+
+      overflow: hidden;
+
+
+    img {
+      float: left;
+      width: 18%;
+    }
+     .profileinfo {
+      width: 75%;
+      float: left;
+      margin: 5px;
+      padding-left: 10px;
+
+
+     h4{
+      font-weight: bold;
+      padding-bottom: 10px;
+      padding-right: 5px;
+      float: left;
+    }
+     .team {
+      margin-bottom: 10px;
+      font-style: italic;
+      font-weight: lighter;
+
+    }
+     }
     }
 
 
@@ -309,6 +352,24 @@ body {
         }
       }
       #content {
+
+        /*Squad page */
+        .profile {
+          width: 345px;
+          height: auto;
+          max-height: 300px;
+          border-bottom: none;
+          img {
+            width: 100px;
+          }
+          .profileinfo {
+            width: 220px;
+          }
+        }
+
+
+
+
         .cycle-slideshow {
           display: inherit;
           img{
@@ -450,6 +511,15 @@ body{
         }
         .fb-title {
 
+        }
+      }
+      /*Squad page*/
+      .profile {
+        width: 450px;
+        margin: 0 auto;
+        height: 250px;
+        img{
+          width: 180px;
         }
       }
     }
