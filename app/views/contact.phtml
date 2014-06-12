@@ -2,22 +2,24 @@
 
     <h2>Contact Form</h2>
 
-    <form class="form" method="get" action="http://webdesignstudents.co.uk/students/response.php">
+
+
+    <form class="form" method="POST" action="index.php?page=contact" id="contact-form">
 
         <p class="name">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="John Smith" />
+            <input type="text" name="name" id="name" placeholder="Name" required="" />
 
         </p>
 
         <p class="email">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" placeholder="mail@example.com" />
+            <input type="text" name="email" id="email" placeholder="mail@example.com" required="" />
 
         </p>
 
         <p class="text">
-            <textarea rows="10" cols="55" name="text" placeholder="Write A Message To Us"></textarea>
+            <textarea rows="10" cols="55" name="comment" placeholder="Write A Message To Us" required=""></textarea>
         </p>
 
         <p class="submit">

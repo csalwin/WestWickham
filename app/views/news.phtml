@@ -44,36 +44,46 @@
 <div class="col-3">
 
 
-    <section class="fb-post">
-        <div class="fb-title">
-            <h3>Fourth title</h3>
-        </div>
-        <div class="fb-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
-                sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
-                nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
-        </div>
-    </section>
-    <section class="fb-post">
-        <div class="fb-title">
-            <h3>Fifth title</h3>
-        </div>
-        <div class="fb-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
-                sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
-                nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
-        </div>
-    </section>
-    <section class="fb-post">
-        <div class="fb-title">
-            <h3>Sixth title</h3>
-        </div>
-        <div class="fb-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra, felis et congue dignissim, diam metus cursus diam, mattis molestie purus quam
-                sit amet purus. Aliquam sit amet massa at neque varius mattis scelerisque ut lacus. Suspendisse egestas porttitor felis sit amet tempor. Quisque venenatis
-                nisi eu orci ullamcorper, quis consequat nisl vehicula. Curabitur placerat urna vel velit eleifend, et.</p>
-        </div>
-    </section>
+
+        <?php
+
+
+        $page_id = '169748219778916';
+        $access_token = '705713249476165|i_xh3sX7ou5pirIGjSMned7-I_U';
+        //Get the JSON
+        //$json_object = @file_get_contents('https://graph.facebook.com/'.$page_id.'/posts?access_token='.$access_token);
+
+
+        $json_object = @file_get_contents('https://graph.facebook.com/' . $page_id .
+            '/posts?access_token=' . $access_token);
+
+        //@file_get_contents
+
+        //Interpret data
+
+
+        $fbdata = json_decode($json_object);
+
+
+        foreach ($fbdata->data as $post )
+        {
+            echo'<section class="fb-post">';
+            $posts .= '<p><a href="' . $post->link . '">' . $post->name . '</a></p>';
+            $posts .= '<p><a href="' . $post->link . '">' . $post->story . '</a></p>';
+            $posts .= '<p><a href="' . $post->link . '">' . $post->message . '</a></p>';
+            $posts .= '<p>' . $post->description . '</p>';
+            $posts .= '<br />';
+            echo $posts;
+            echo '</section>';
+        }
+
+
+
+
+
+        ?>
+
+
 </div>
 
 

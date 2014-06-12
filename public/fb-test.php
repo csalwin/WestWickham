@@ -45,44 +45,38 @@
     <div id="content">
 
 
-        $url = ‘https://graph.facebook.com/’ . $page_id . ‘/posts?access_token=’ . $access_token;
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $json_object = curl_exec($ch);
-        curl_close($ch);
-
 
 <?php
+
+
 $page_id = '169748219778916';
 $access_token = '705713249476165|i_xh3sX7ou5pirIGjSMned7-I_U';
 //Get the JSON
 //$json_object = @file_get_contents('https://graph.facebook.com/'.$page_id.'/posts?access_token='.$access_token);
 
 
-$url = "https://graph.facebook.com/’ . $page_id . ‘/posts?access_token=’ . $access_token";
+$json_object = @file_get_contents('https://graph.facebook.com/' . $page_id .
+    '/posts?access_token=' . $access_token);
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$json_object = curl_exec($ch);
-curl_close($ch);
+//@file_get_contents
 
 //Interpret data
+
+
 $fbdata = json_decode($json_object);
 
+print_r($fbdata);
 foreach ($fbdata->data as $post )
 {
-    $posts .= '<p><a href="' . $post->link . '">' . $post->story . '</a></p>';
-    $posts .= '<p><a href="' . $post->link . '">' . $post->message . '</a></p>';
-    $posts .= '<p>' . $post->description . '</p>';
-    $posts .= '<br />';
+    $posts .= '<p><a href="' . $post->link . '">' . $post->name . '</a></p>';
+     $posts .= '<p><a href="' . $post->link . '">' . $post->story . '</a></p>';
+     $posts .= '<p><a href="' . $post->link . '">' . $post->message . '</a></p>';
+     $posts .= '<p>' . $post->description . '</p>';
+     $posts .= '<br />';
+    echo $posts;
 }
+
+
 
 
 
@@ -98,6 +92,7 @@ foreach ($fbdata->data as $post )
     </div>
 
     <footer>
+        <img src="admin-home.phtml"/>
 
     </footer>
 

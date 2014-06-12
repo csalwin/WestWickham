@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors','1');
+ini_set('display_errors','1');//TODO remove from deployment
 include('../app/controllers/DefaultController.php');
 
 //Creates an Instance of Class Default controller
