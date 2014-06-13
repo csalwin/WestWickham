@@ -7,7 +7,9 @@
  */
 
 namespace app\controllers;
+require_once ('../vendor/autoload.php');
 require_once('../app/model/DefaultModel.php');
+
 use app\model\DefaultModel;
 ini_set('display_errors','1');
 class DefaultController {
@@ -27,6 +29,10 @@ class DefaultController {
                 $this->title = 'West Wickham Underwater Hockey';
                 $this->content = 'home';
                 break;
+            case 'terms':
+                $this->title = 'Terms & Condtions Page';
+                $this->content = 'terms';
+                break;
             case 'about':
                 $this->title = 'About The Club';
                 $this->content = 'about';
@@ -41,7 +47,13 @@ class DefaultController {
                 break;
             case 'squad':
                 $this->title = 'Squad ';
+
+
                 $this->content = 'squad';
+
+                /*if(isset($_POST['squadlist'])){
+                $this->data->viewSquad($_POST['squadlist']);
+            };*/
                 break;
             case 'shop':
                 $this->title = 'Shop';
@@ -50,21 +62,6 @@ class DefaultController {
             case 'contact':
 
                 $this->title = 'Contact Us';
-                if(isset($_GET['submit'])){
-                    ini_set('SMTP','mail.british-study.com'); //TODO Remove When Deployed
-
-                    $this->name = $_GET['name'];
-                    $this->email = $_GET['email'];
-
-                    $this->comment = $_GET['comment'];
-
-
-                    $this->sendEmail();
-
-                    if(!empty($response)){
-                        echo $response;
-                    };
-                }
                 $this->content = 'contact';
                 break;
             case 'login':
@@ -151,59 +148,47 @@ class DefaultController {
         $this->data->deleteSquad($id);
     }
 
+    public function westwickhamEmail(){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $comment = $_POST['comment'];
+        $this->mail = new \PHPMailer;
+
+        $this->mail->isSMTP();
+        $this->mail->Host = 'smtp.googlemail.com';
+        $this->mail->SMTPAuth = true;
+        $this->mail->Username = 'sonic696@gmail.com';
+        $this->mail->Password = 'c2aukc2auk';
+        $this->mail->SMTPSecure = 'tls';
+
+        $this->mail->From = $email;
+        $this->mail->FromName = $name;
+        $this->mail->addBCC('chris.s.alwin@gmail.com','Email test');
+        $this->mail->addAddress($email,$name);
+        $this->mail->addReplyTo($email,$name);
+
+        $this->mail->WordWrap = 50;
+        $this->mail->isHTML(true);
+        $this->mail->Subject = 'West Wickham Underwater Hockey Website Comment';
 
 
-
-
-
-    public $name;
-    public $email;
-
-    public $comment;
-    public $to;
-    public $subject;
-
-
-
-// process data to form variable that can be mailed: $to, $subject, $message and $headers
-    public function sendEmail(){
-
-//Prepare to send Email
-
-
-        $this->to = "sonic696@gmail.com";
-        $this->subject = 'Website Comment';
-        $this->headers ="From: $this->email";
-
-        /*$message =
-        "$name has sent a comment they are $gender and they commeted that $comment";*/
-        $this->message = $this->name.' has sent a comment '.$this->comment;
-
-        /* $message = $name;
-         $message .= ' has sent a comment they are ';
-         $message .=$gender;
-         $message .=' and they commeted that ';
-         $message .=$comment; */
-
-
-
-
-//Send Data
-
-        if(mail($this->to,$this->subject,$this->message, $this->headers)){
-
-            $response = '<h2>Thankyou for your Message</h2>';
-
+        $this->mail->Body = '<h1><span class="template-label" style="color: #ffffff; font-weight: bold; font-size: 11px;">FORM RECIEVED</span></h1>
+         <h2 style="color: #232323; font-family: \'Helvetica\',\'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 40px; margin: 0; padding: 0;" align="left">Hi, '.$name.'</h2>
+         <p class="comment" style="color:#9e9e9e; font-family:\'Helvetica\',\'Arial\', sans-serif; font-weight:lighter; text-align: left; line-height: 21px; font-size: 18px; margin: 0 0 10px; padding: 0;" align= "left">Thankyou for Your Comment.</p>
+           </body>
+           <html>';
+        $this->mail->AltBody = 'There has been a comment, details as follows:'.'\n\rCustomer\'s Name: '.$name.'\n\rEmail: '.$email.'\n\rComment: '.$comment;
+        if(!$this->mail->send()){
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: '.$this->mail->ErrorInfo;
+        }else{
+            $this->feedback = "thanks";
+            return;
         }
-        else {
-            $response = '<h2>Sorry There has been a problem. Please <a href="javascript:history.back()">try again</a> </h2>';
-        }
-        return $response;
-
-
-
-//If data sent ok say Thankyou
-
-// If Data not sent say there's a problem
     }
+
+
+
+
+
 }

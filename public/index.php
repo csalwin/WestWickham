@@ -75,6 +75,7 @@ $data = new app\controllers\DefaultController();
 
         <ul>
             <li>
+                <a href="index.php?page=terms">Terms & Conditions</a>
                 <a href="index.php?page=login">Admin</a>
             </li>
         </ul>

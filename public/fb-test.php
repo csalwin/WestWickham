@@ -44,10 +44,10 @@
 
     <div id="content">
 
-
+<!----
 
 <?php
-
+/*
 
 $page_id = '169748219778916';
 $access_token = '705713249476165|i_xh3sX7ou5pirIGjSMned7-I_U';
@@ -79,8 +79,30 @@ foreach ($fbdata->data as $post )
 
 
 
+*/
+?>---->
 
-?>
+        <div id="FeederNinja_cebe8acd529d458b89f025e2754ef2e8"></div>
+        <script type="text/javascript">
+            (function() {
+                var fn = document.createElement('script'); fn.type = 'text/javascript';
+                fn.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feederninja.com/api/feed/cebe8acd529d458b89f025e2754ef2e8?fnurl=' + window.location.href;
+                var s = document.getElementsByTagName('head')[0].appendChild(fn);
+            })();
+        </script>
+
+
+
+
+
+
+
+
+        <div class="feedgrabbr_widget" id="fgid_ea2a41112a3884657b52711b1"></div>
+        <script> if (typeof(fg_widgets)==="undefined") fg_widgets = new Array();fg_widgets.push("fgid_ea2a41112a3884657b52711b1");</script>
+        <script src='http://www.feedgrabbr.com/widget/fgwidget.js'></script>
+
+
         705713249476165|i_xh3sX7ou5pirIGjSMned7-I_U
 
 

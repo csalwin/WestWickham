@@ -338,11 +338,15 @@ class DefaultModel {
 //SQUAD FUNCTIONS ******************************************************************************************************************************
 
     public function viewSquad(){
-        $action = isset($_GET['action']) ? $_GET['action'] : "";
+
 
 
 //select all data
-        $query = "SELECT * FROM squad ORDER BY squadname, squaddob";
+
+
+            $query = "SELECT * FROM squad ORDER BY squadname, squaddob, squadteam";
+
+
         $stmt = $this->con->prepare( $query );
         $stmt->execute();
 
@@ -623,7 +627,7 @@ class DefaultModel {
         echo"<td>Team</td>";
         echo"<td><select name='squadteam'>";
                     echo "<option value='First Team'>First Team</option>";
-                    echo "<option value='Second Team'>Development Team</option>";
+                    echo "<option value='Development Team'>Development Team</option>";
 
                 echo "</select>$squadteam</td>";
         echo"</tr>";

@@ -1,6 +1,18 @@
+
+
 <div id="contact_form">
 
     <h2>Contact Form</h2>
+
+    <?php
+    $session = new app\controllers\DefaultController();
+    if(isset($_POST['action'] )){
+
+        $session->westwickhamEmail();
+        echo "<h2>Thanks</h2>";
+    }
+    ?>
+
 
 
 
@@ -23,7 +35,7 @@
         </p>
 
         <p class="submit">
-            <input type="submit" value="Send" />
+            <input type="submit" name="action" value="Send" />
         </p>
     </form>
 

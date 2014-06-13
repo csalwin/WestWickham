@@ -1,8 +1,8 @@
 <?php
 session_start();
-if($_REQUEST['usr']=="abc" && $_REQUEST['pswd']=="123"){
-    $_SESSION['usr'] = "abc";
- $_SESSION['pswd'] = "123";
+if($_REQUEST['usr']=="admin" && $_REQUEST['pswd']=="WWmattnunn253"){
+    $_SESSION['usr'] = "admin";
+ $_SESSION['pswd'] = "WWmattnunn253";
  header("Location: index.php?page=admin");
  }
 else {
