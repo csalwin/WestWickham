@@ -155,7 +155,7 @@ class DefaultController {
         $this->mail = new \PHPMailer;
 
         $this->mail->isSMTP();
-        $this->mail->Host = 'smtp.googlemail.com';
+        $this->mail->Host = 'smtp.gmail.com';
         $this->mail->SMTPAuth = true;
         $this->mail->Username = 'sonic696@gmail.com';
         $this->mail->Password = 'c2aukc2auk';
@@ -175,6 +175,7 @@ class DefaultController {
         $this->mail->Body = '<h1><span class="template-label" style="color: #ffffff; font-weight: bold; font-size: 11px;">FORM RECIEVED</span></h1>
          <h2 style="color: #232323; font-family: \'Helvetica\',\'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 40px; margin: 0; padding: 0;" align="left">Hi, '.$name.'</h2>
          <p class="comment" style="color:#9e9e9e; font-family:\'Helvetica\',\'Arial\', sans-serif; font-weight:lighter; text-align: left; line-height: 21px; font-size: 18px; margin: 0 0 10px; padding: 0;" align= "left">Thankyou for Your Comment.</p>
+         <p>
            </body>
            <html>';
         $this->mail->AltBody = 'There has been a comment, details as follows:'.'\n\rCustomer\'s Name: '.$name.'\n\rEmail: '.$email.'\n\rComment: '.$comment;
@@ -182,7 +183,7 @@ class DefaultController {
             echo 'Message could not be sent.';
             echo 'Mailer Error: '.$this->mail->ErrorInfo;
         }else{
-            $this->feedback = "thanks";
+            $this->feedback = "Thankyou For your Message";
             return;
         }
     }
